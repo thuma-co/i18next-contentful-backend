@@ -1,0 +1,49 @@
+{
+  "name": "i18next-contentful-backend",
+  "version": "0.0.0",
+  "description": "A contentful backend for i18next",
+  "main": "lib/cjs/index.js",
+  "module": "lib/mjs/index.js",
+  "exports": {
+    ".": {
+      "import": "./lib/mjs/index.js",
+      "require": "./lib/cjs/index.js"
+    }
+  },
+  "files": [
+    "lib/*"
+  ],
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "rm -rf lib/* && tsc -p tsconfig-esm.json && tsc -p tsconfig-common.json && ./scripts/fixup.sh",
+    "prepublish": "yarn build && yarn test",
+    "test": "jest --passWithNoTests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thuma-co/i18next-contentful-backend.git"
+  },
+  "keywords": [
+    "i18n",
+    "i18next",
+    "contentful",
+    "translation",
+    "backend"
+  ],
+  "author": "Thuma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thuma-co/i18next-contentful-backend/issues"
+  },
+  "homepage": "https://github.com/thuma-co/i18next-contentful-backend#readme",
+  "peerDependencies": {
+    "contentful": "^9.1.6"
+  },
+  "devDependencies": {
+    "contentful": "^9.1.6",
+    "i18next": "^21.6.10",
+    "jest": "^27.4.7",
+    "lerna": "^4.0.0",
+    "typescript": "^4.5.5"
+  }
+}
